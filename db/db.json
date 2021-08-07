@@ -1,0 +1,45 @@
+{
+  "funcionarios": [
+    {
+      "id": "737",
+      "nome": "João Nascimento",
+      "email": "joao.nascimento0576@gmail.com",
+      "nascimento": "2002-03-24",
+      "sexo": "M",
+      "senioridade": "Estagiário",
+      "areaDeAtuacao": [
+        "Backend",
+        "Frontend"
+      ]
+    },
+    {
+      "id": "920",
+      "nome": "Joseffe Barroso",
+      "email": "joseffe@email.com",
+      "nascimento": "1976-01-12",
+      "sexo": "M",
+      "senioridade": "Sênior",
+      "areaDeAtuacao": [
+        "Backend",
+        "Frontend",
+        "Outro",
+        "Analista",
+        "DBA"
+      ]
+    }
+  ],
+  "clientes": [
+    {
+      "id": "183",
+      "nome": "José Pasqual",
+      "email": "jose@email.com",
+      "telefone": "(11) 99949-4241"
+    },
+    {
+      "id": "819",
+      "nome": "Mario Rodrigo",
+      "email": "mario@email.com",
+      "telefone": "(13) 99940-4241"
+    }
+  ]
+}

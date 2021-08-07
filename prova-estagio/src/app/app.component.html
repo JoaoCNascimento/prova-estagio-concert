@@ -1,0 +1,44 @@
+<nav *ngIf="mostrarMenu">
+    <img [src]="logoPath">  
+
+    <hr>
+
+    <div id="menu">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <div class="row">
+                <fa-icon [icon]="faHome"></fa-icon>
+                <h5>Home</h5>
+            </div>
+        </a>
+
+        <a routerLink="/mapa" routerLinkActive="active">
+            <div class="row">
+                <fa-icon [icon]="faMap"></fa-icon>
+                <h5>Mapa</h5>
+            </div>
+        </a>
+    
+        <a routerLink="/funcionarios" routerLinkActive="active">
+            <div class="row">
+                <fa-icon [icon]="faUserTie"></fa-icon>
+                <h5>Funcionários</h5>
+            </div>
+        </a>
+    
+        <a routerLink="/clientes" routerLinkActive="active">
+            <div class="row">
+                <fa-icon [icon]="faUser"></fa-icon>
+                <h5>Clientes</h5>
+            </div>
+        </a>
+    
+        <a routerLink="/login" routerLinkActive="active">
+            <div class="row">
+                <fa-icon [icon]="faSignOut"></fa-icon>
+                <h5>Sair</h5>
+            </div>
+        </a>
+    </div>
+</nav>
+<loader *ngIf="loaderService.isLoading | async"></loader>
+<router-outlet></router-outlet>

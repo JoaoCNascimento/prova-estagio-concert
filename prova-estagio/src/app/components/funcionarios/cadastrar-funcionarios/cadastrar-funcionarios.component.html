@@ -1,0 +1,75 @@
+<div id="container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="cabecalho">
+            <h2>Cadastrar funcionário</h2>
+            <a routerLink="/funcionarios">
+                <fa-icon [icon]="faTimes"></fa-icon>
+            </a>
+        </div>
+
+        <label for="nome">Nome</label>
+        <input  formControlName="nome" type="text" name="nome" placeholder="Digite o nome do funcionário">
+
+        <div class="erro" *ngIf="!this.form.get('nome').valid && this.form.get('nome').touched || !this.form.get('nome').valid && !formValido">
+            Nome com tamanho inferior a 3 caracteres.
+        </div>
+
+        <label for="email">Email</label>
+        <input formControlName="email"  type="text" name="email" placeholder="Digite o email do funcionário">
+        
+        <div class="erro" *ngIf="!this.form.get('email').valid && this.form.get('email').touched || !this.form.get('email').valid && !formValido">
+            Email nulo ou inválido.
+        </div>
+
+        <label for="nascimento">Nascimento</label>
+        <input  formControlName="nascimento"  type="date" name="nascimento">
+        
+        <div class="erro" *ngIf="!this.form.get('nascimento').valid && this.form.get('nascimento').touched || !this.form.get('nascimento').valid && !formValido">
+            Data inválida ou nula.
+        </div>
+
+        <p>Sexo</p>
+        
+        <div class="double">
+            <input  formControlName="sexo"  type="radio" name="sexo" id="sexoM" value="M">
+            <label for="sexoM">Masculino</label>
+        
+            <input  formControlName="sexo"  type="radio" name="sexo" id="sexoF" value="F">
+            <label for="sexoF">Feminino</label>
+        </div>
+
+        <div class="erro" *ngIf="!this.form.get('sexo').valid && !formValido">
+            Por favor, selecione um sexo.
+        </div>
+
+        <label for="senioridade">Senioridade</label>
+        <select formControlName="senioridade"  name="senioridade" id="senioridade">
+            <option disabled>Selecione uma senioridade</option>
+            <option value="Estagiário">Estágiario</option>
+            <option value="Trainne">Trainne</option>
+            <option value="Júnior">Júnior</option>
+            <option value="Pleno">Pleno</option>
+            <option value="Sênior">Sênior</option>
+        </select>
+
+        <div class="erro" *ngIf="!this.form.get('senioridade').valid && !formValido">
+            Por favor, selecione uma senioridade.
+        </div>
+    
+        <p>Área de atuação</p>
+
+        <div *ngFor="let area of areaDeAtuacao" class="check">
+            <label for="{{ area }}">
+                <input type="checkbox" value="{{ area }}" (change)="onCheckBoxChange($event)">
+                {{ area }}
+            </label>
+        </div>
+
+        <div class="erro check" *ngIf="!this.form.get('areaDeAtuacao').valid && !formValido">
+            Selecione pelo menos uma das opções acima.
+        </div>
+
+        <button>Cadastrar</button>
+    </form>
+</div>

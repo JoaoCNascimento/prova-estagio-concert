@@ -1,0 +1,34 @@
+<div id="container">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="cabecalho">
+            <h2>Cadastrar clientes</h2>
+            <a routerLink="/clientes">
+                <fa-icon [icon]="faTimes"></fa-icon>
+            </a>
+        </div>
+
+        <label for="nome">Nome</label>
+        <input  formControlName="nome" type="text" name="nome" placeholder="Digite o nome do cliente">
+
+        <div class="erro" *ngIf="!this.form.get('nome').valid && this.form.get('nome').touched || !this.form.get('nome').valid && !formValido">
+            Nome com tamanho inferior a 3 caracteres.
+        </div>
+
+        <label for="email">Email</label>
+        <input formControlName="email"  type="text" name="email" placeholder="Digite o email do cliente">
+        
+        <div class="erro" *ngIf="!this.form.get('email').valid && this.form.get('email').touched || !this.form.get('email').valid && !formValido">
+            Email nulo ou inválido.
+        </div>
+
+        <label for="email">Telefone</label>
+        <input formControlName="telefone"  type="text" name="telefone" placeholder="Digite o telefone do cliente">
+        
+        <div class="erro" *ngIf="!this.form.get('telefone').valid && this.form.get('email').touched || !this.form.get('telefone').valid && !formValido">
+            Telefone nulo ou inválido.
+        </div>
+
+        <button>Cadastrar</button>
+    </form>
+</div>

@@ -1,0 +1,136 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'
+@import '~ngx-toastr/toastr'
+
+*
+    font-family: roboto, sans-serif
+    margin: 0
+    padding: 0
+    text-decoration: none
+    box-sizing: border-box
+
+:root
+    --pink: #FFEAEE
+    --light-brown: #7F675B
+    --blue: #0075F2
+    --light-blue: #56A8FF
+    --dark-blue: #003A78
+    --aqua: #00F2F2
+    --marine: #096B72
+    --darker-blue: #001D3C
+
+$pink: var(--pink)
+$light-brown: var(--light-brown)
+$blue: var(--blue)
+$light-blue: var(--light-blue)
+$aqua: var(--aqua)
+$marine: var(--marine)
+$dark-blue: var(--dark-blue)
+$darker-blue: var(--darker-blue)
+
+#container
+    padding: 20px
+
+table
+    margin: 0px auto
+    border-collapse: collapse
+    width: 100%
+    position: relative
+
+thead
+    background: var(--blue)
+
+thead td
+    padding: 10px 5px
+    font-weight: bold
+    color: white
+
+td
+    padding: 20px 5px
+    border-bottom: 1px solid #CCC
+
+.last-td fa-icon, .danger
+    margin-left: 5px
+    font-size: 1.4rem
+    cursor: pointer
+    padding: 5px
+    width: 100%
+
+.last-td fa-icon:not(.danger)
+    color: $blue
+
+.last-td fa-icon:hover:not(.danger)
+    color: $light-blue
+
+.last-td
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+
+.danger
+    color: rgba(255, 0, 0, 0.80)
+
+.danger:hover
+    color: rgba(255, 0, 0, 0.60)
+
+tr:hover:not(thead tr)
+    background: #CCC
+
+.cabecalho
+    display: flex
+    justify-content: space-between
+
+.cabecalho fa-icon
+    color: red
+    font-size: 1.9rem
+
+#table-container
+    box-shadow: 1px 1px 1px 2px rgba(200,200,200, 0.8)
+    height: 500px
+    overflow-y: auto
+
+#table-container p
+    align-self: center
+    margin: auto
+    font-size: 1.2rem
+
+// Controls panel dos componentes
+// Funcionarios
+// Clientes
+
+.registros-counter
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 1.2rem
+    margin-top: 30px
+    color: $light-blue
+    padding: 5px
+
+    span
+        background: $dark-blue
+        padding: 5px 15px
+        border-radius: 5px
+        color: white
+        font-size: 1rem
+
+#control-panel
+    display: flex
+    background: $blue
+    width: 100%
+    margin: 25px auto
+
+#control-panel a
+    padding: 15px
+    height: 100%
+    width: 33.333333%
+    text-align: center
+    font-size: 1.3rem
+    color: white
+    font-weight: bold
+
+#control-panel a:hover
+    background: $light-blue
+
+hr
+    border-color: rgba(0,0,0,0.24)

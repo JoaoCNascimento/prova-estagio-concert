@@ -1,0 +1,12 @@
+<div class="dialog">
+    <div class="dialog-body">
+        <div class="dialog-message">
+            {{ confirmMessage }}
+        </div>
+
+        <div class="dialog-controls">
+            <button class="confirmar" (click)="dialogRef.close(true)">Confirmar</button>
+            <button class="cancelar" (click)="dialogRef.close(false)">Cancelar</button>
+        </div>
+    </div>
+</div>

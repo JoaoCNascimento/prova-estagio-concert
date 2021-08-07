@@ -1,0 +1,72 @@
+h2
+    margin-bottom: 15px
+
+h3 
+    color: var(--light-blue)
+
+.content-header
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    margin-bottom: 25px
+
+.content-header small
+    font-weight: 250
+
+.content-container
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 15px
+    width: 60%
+    margin: auto
+    box-shadow: 1px 1px 1px 1px rgb(0,0,0,0.20)
+    margin-bottom: 45px
+
+.content
+    display: flex
+    align-items: center
+
+.content-text
+    display: flex
+    flex-direction: column
+    width: 60%
+    height: 100%
+    justify-content: space-between
+
+.content-text p
+    margin-bottom: 15px
+    font-weight: 300
+
+.content-text ul
+    margin-left: 15px
+
+.content-text ul li
+    font-weight: 300
+    margin-bottom: 5px
+
+.content-img
+    width: 50%
+    padding: 15px
+
+.content-img img
+    width: 100%
+
+@media screen and (max-width: 1500px)
+
+    .content-container
+        width: 100%
+
+    .content
+        flex-direction: column
+        padding: 0px
+    
+    .content-text, .content-img
+        width: 100%
+        padding: 0px
+        margin-bottom: 15px
+
+    .content-img
+        order: 1

@@ -1,0 +1,48 @@
+<div id="container">    
+
+    <div class="cabecalho">
+        <h2>Editar cliente</h2>
+        <a routerLink="/clientes">
+            <fa-icon [icon]="faTimes"></fa-icon>
+        </a>
+    </div>
+
+    <form>
+        <label for="id">Id</label>
+        <div id="id-input">
+            <input type="text" name="id" [(ngModel)]="id" placeholder="Digite o ID do cliente">
+            <button (click)="findOneFuncionario()" ><fa-icon [icon]="faSearch"></fa-icon>Pesquisar</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <label for="id">Id</label>
+        <input type="text" formControlName="id" type="text" name="id" disabled>
+
+        <label for="nome">Nome</label>
+        <input  formControlName="nome" type="text" name="nome" placeholder="Digite o nome do cliente">
+
+        <div class="erro" *ngIf="!this.form.get('nome').valid && this.form.get('nome').touched || !this.form.get('nome').valid && !formValido">
+            Nome com tamanho inferior a 3 caracteres.
+        </div>
+
+        <label for="email">Email</label>
+        <input formControlName="email"  type="text" name="email" placeholder="Digite o email do cliente">
+        
+        <div class="erro" *ngIf="!this.form.get('email').valid && this.form.get('email').touched || !this.form.get('email').valid && !formValido">
+            Email nulo ou inválido.
+        </div>
+
+        <label for="email">Telefone</label>
+        <input formControlName="telefone"  type="text" name="telefone" placeholder="Digite o telefone do cliente">
+        
+        <div class="erro" *ngIf="!this.form.get('telefone').valid && this.form.get('email').touched || !this.form.get('telefone').valid && !formValido">
+            Telefone nulo ou inválido.
+        </div>
+
+        <button>Salvar alterações</button>
+    </form>
+</div>

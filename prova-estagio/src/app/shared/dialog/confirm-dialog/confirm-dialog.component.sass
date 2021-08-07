@@ -1,0 +1,59 @@
+.dialog, .dialog-body
+    position: fixed
+    right: 0
+    bottom: 0
+    top: 0
+    left: 0
+
+.dialog
+    width: 100vw
+    height: 100vh
+    background: rgb(0,0,0,0.35)
+    z-index: 99999
+
+.dialog-body
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    width: 320px
+    height: 140px
+    background: white
+    margin: auto
+    padding: 15px
+
+.dialog-message
+    padding-top: 20px
+    margin-bottom: 25px
+
+.dialog-controls
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+.confirmar, .cancelar
+    border: none
+    width: 48%
+    cursor: pointer
+    padding: 10px 10px 
+    text-transform: capitalize
+    display: flex
+    align-items: center
+    justify-content: center
+    font-weight: normal
+    font-size: 1rem
+    border-radius: 2px
+    color: white
+    transition: 0.15s
+
+.confirmar
+    background: var(--blue)
+
+.confirmar:hover
+    background: var(--light-blue)
+
+.cancelar
+    background: red
+
+.cancelar:hover
+    background: rgba(255, 0, 0, 0.5)

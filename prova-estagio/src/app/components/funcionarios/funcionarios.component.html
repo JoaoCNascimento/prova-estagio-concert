@@ -1,0 +1,23 @@
+<div id="container">
+
+    <h2>Funcionários</h2>
+
+    <div id="table-container">
+        <app-listar (contarRegistros)="contarFuncionarios($event)" *ngIf="listaFuncionarios && listaFuncionarios.length > 0" [funcionarios]="listaFuncionarios"></app-listar>
+        <p *ngIf="listaFuncionarios.length == 0 || !listaFuncionarios">Nenhum registro encontrado.</p>
+    </div>
+
+    <p class="registros-counter">Registros encontrados: <span>{{ quantidadeFuncionarios }}</span></p>
+
+    <div id="control-panel">
+        <a routerLink="cadastrar"> <fa-icon [icon] = "faPlus" ></fa-icon> Cadastrar</a>
+        <a routerLink="." (click)="reload()"> <fa-icon [icon]="faRefresh"></fa-icon> Atualizar</a>
+        <a routerLink="editar/"> <fa-icon [icon]="faEdit"></fa-icon> Editar</a>
+    </div>
+    
+    <hr>
+</div>
+
+<router-outlet></router-outlet>
+
+

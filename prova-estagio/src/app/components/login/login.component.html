@@ -1,0 +1,19 @@
+<div id="container">
+    <img src="/assets/img/concert.logo.png" alt="">
+    <div id="form">
+
+        <h2>Faça seu login</h2>
+
+        <label for="login">Login</label>
+        <input [(ngModel)]="usuario.login" type="text" (keypress)="onChange()" name="login" placeholder="Digite o login">
+
+        <label for="senha">Senha</label>
+        <input [(ngModel)]="usuario.senha" type="password" (keypress)="onChange()" name="senha" placeholder="Digite sua senha">
+
+        <p *ngIf="!autenticado">
+            Senha e/ou login inválidos.
+        </p>
+
+        <button (click)="fazerLogin()">Entrar</button>
+    </div>
+</div>

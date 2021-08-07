@@ -1,0 +1,96 @@
+
+<table *ngIf="funcionarios">
+
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Nome</td>
+            <td>Email</td>
+            <td>Nascimento</td>
+            <td>Sexo</td>
+            <td>Senioridade</td>
+            <td>Atuação</td>
+            <td>Ações</td>
+        </tr>
+    </thead>
+        
+    <tbody>
+            
+        <tr *ngFor="let funcionario of funcionarios">
+            <td>
+                {{funcionario.id}}
+            </td>
+            <td>
+                {{funcionario.nome}}
+            </td>
+            <td>
+                {{funcionario.email}}
+            </td>
+            <td>
+                {{funcionario.nascimento.replace("-","/").replace("-","/")}}
+            </td>
+            <td>
+                {{funcionario.sexo}}
+            </td>
+            <td>
+                {{funcionario.senioridade}}
+            </td>
+                
+            <td>
+                {{funcionario.areaDeAtuacao}}
+            </td>
+                
+            <td class="last-td">
+                <a [routerLink]="['editar', funcionario.id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </a>
+
+                <fa-icon class="danger" (click)="confirmarExclusaoFuncionario(funcionario.id)" [icon]="faTrash"></fa-icon>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table *ngIf="clientes">
+    <thead>
+        <tr>
+            <td>#</td>
+
+            <td>Nome</td>
+                
+            <td>Email</td>
+
+            <td>Telefone</td>
+
+            <td>Ações</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes">
+            <td>
+                {{cliente.id}}
+            </td>
+
+            <td>
+                {{cliente.nome}}
+            </td>
+
+            <td>
+                {{cliente.email}}
+            </td>
+                
+            <td>
+                {{cliente.telefone}}
+            </td>
+
+            <td class="last-td">
+                <a [routerLink]="['editar', cliente.id]">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </a>
+
+                <fa-icon class="danger" (click)="confirmarExclusaoCliente(cliente.id)" [icon]="faTrash"></fa-icon>
+            </td>
+        </tr>
+    </tbody>
+</table>
