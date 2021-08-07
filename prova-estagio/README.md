@@ -1,11 +1,7 @@
 # ProvaEstagio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Projeto feito através do [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
 
 ## APIS
 
-As "apis" estão contidas na pasta db, para usá-las utilize o json server.
+As "APIS" estão contidas na pasta db, para usá-las utilize o json server.
